@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>how much would you like <span>to borrow?</span></h1>
+      <div class="main__box">
+        <div class="main__request">
+          <p class="subtitle">borrow amount</p>
+          <input
+            type="range"
+            class="range money"
+            min="1000"
+            max="20000"
+            value="2000"
+            step="100"
+          />
+          <div class="count">
+            <p>£1000</p>
+            <p>£20k</p>
+          </div>
+
+          <div class="output__sum">&#163;2,000.00</div>
+          <p class="subtitle">payment period</p>
+          <input type="range" class="range period" min="1" max="15" value="5" />
+          <div class="count">
+            <p>1 year</p>
+            <p>15 years</p>
+          </div>
+          <div class="output__years">5 years</div>
+          <p class="deposit__title">Deposit Date</p>
+          <div class="calendar__box">
+            <div class="percent__output">4,95%</div>
+            <div class="calendar">
+              <input type="date" class="date" />
+            </div>
+          </div>
+          <input
+            type="radio"
+            name="how-pay"
+            value="transfer"
+            checked
+            class="transfer"
+          />deposit Bank transfer
+          <input type="radio" name="how-pay" value="cash" class="cash" />Cash
+        </div>
+
+        <div class="main__response">
+          <h2 class="title">monthly payment</h2>
+          <div class="monthly_payment">0</div>
+          <p>fees include</p>
+          <div class="response__box">
+            <div class="response__item">
+              <p>borrowing</p>
+              <div class="response__output title">£2,000.00</div>
+            </div>
+            <div class="response__item">
+              <p>to repay</p>
+              <div class="response__repay title">£3,500.00</div>
+            </div>
+          </div>
+          <form action="">
+            <button class="button">send form</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

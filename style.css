@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Raleway:wght@400;600;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-family: Raleway;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.container {
+  padding: 0px 40px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 63px;
+  font-weight: 900;
+  padding-top: 76px;
+  margin-bottom: 70px;
+}
+
+h1 span {
+  color: #54d4a0;
+}
+
+.main__box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.subtitle {
+  color: #808080;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.count {
+  display: flex;
+  justify-content: space-between;
+  color: #808080;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.output {
+  margin-bottom: 88.5px;
+  font-size: 43px;
+  font-weight: 700;
+}
+
+.output__years,
+.output__sum {
+  text-align: center;
+  font-size: 43px;
+  font-weight: 700;
+  margin-bottom: 87px;
+}
+
+.calendar__box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 78px;
+}
+
+.percent__output {
+  text-align: right;
+  font-size: 29px;
+}
+
+.deposit__title {
+  text-align: end;
+  color: #54d4a0;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 5px;
+  border-bottom: 1px solid grey;
+  margin-bottom: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 43px;
+  font-weight: 800;
+}
+
+h2 {
+  margin-top: 78px;
+  margin-bottom: 54px;
+}
+
+.monthly_payment {
+  text-align: center;
+  color: #54d4a0;
+  font-size: 63px;
+  font-weight: 900;
+}
+
+.monthly_payment + p {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 112px;
+}
+
+.response__box {
+  display: flex;
+  justify-content: space-between;
+  gap: 140px;
+  margin-bottom: 67px;
+}
+
+.response__item + p {
+  font-size: 17px;
+  letter-spacing: 5.695px;
+  text-transform: uppercase;
+}
+
+.response__output,
+.response__repay {
+  font-family: Open Sans;
+  font-size: 43px;
+  font-weight: 800;
+}
+
+form {
+  max-width: 630px;
+  margin-bottom: 187px;
+}
+.button {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 4.655px;
+  text-transform: uppercase;
+  padding: 17px 0px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #54d4a0;
+  cursor: pointer;
+}

@@ -1,6 +1,8 @@
-// import flatpickr from 'flatpickr';
-// const flatpickr = requires('flatpickr');
-// flatpickr('.flatpickr', { wrap: true });
+flatpickr('.flatpickr', {
+  wrap: true,
+  dateFormat: 'd/m/Y',
+  defaultDate: [new Date()],
+});
 
 const datePayment = document.querySelector('input[type="date"]'),
   button = document.querySelector('.button'),
@@ -12,7 +14,7 @@ const datePayment = document.querySelector('input[type="date"]'),
   outputYears = document.querySelector('.output__years'),
   monthPayment = document.querySelector('.monthly_payment'),
   percentOutput = document.querySelector('.percent__output'),
-  calendar = document.querySelector('.date'),
+  calendar = document.querySelector('.calendar'),
   transferBtn = document.querySelector('.transfer'),
   responseOutput = document.querySelector('.response__output'),
   responseRepay = document.querySelector('.response__repay');
@@ -79,7 +81,10 @@ function countMonthlyPayment() {
 }
 
 function countPercent() {
-  let inputDapositeDate = new Date(datePayment.value);
+  let newCalendarValue = calendar.value.split('/').reverse().join(',');
+  console.log(newCalendarValue);
+  let inputDapositeDate = new Date(newCalendarValue);
+  console.log(inputDapositeDate);
 
   if (inputDapositeDate > finalDate) {
     percent = 6.8;

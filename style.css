@@ -253,6 +253,32 @@ form {
   border: 6px solid #54d4a0;
 }
 
+.flatpickr {
+  border-radius: 3px;
+  border: 1px solid #808080;
+  height: 53px;
+  padding: 12px 8px 11px 20px;
+  background: url('./calendar.svg') 160px 8px no-repeat;
+  color: #808080;
+  font-size: 15px;
+}
+
+.flatpickr input {
+  border: none;
+  outline: 0;
+  width: 70%;
+  color: #808080;
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.flatpickr > input:active {
+  border: none;
+  outline: 0;
+}
+
 @media (max-width: 1240px) {
   .money,
   .period {

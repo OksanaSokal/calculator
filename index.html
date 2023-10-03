@@ -40,14 +40,18 @@
           <p class="deposit__title">Deposit Date</p>
           <div class="calendar__box">
             <div class="percent__output">4,95%</div>
-            <div class="calendar">
+            <!-- <div class="calendar">
               <input type="date" class="date" />
-            </div>
-            <!-- <div class="flatpickr">
-              <input type="text" placeholder="Select Date.." data-input />
-
-              <a class="input-button" title="toggle" data-toggle> иконка </a>
             </div> -->
+            <div class="flatpickr">
+              <input
+                class="calendar"
+                type="text"
+                placeholder="Select Date.."
+                data-input
+              />
+              <!-- input is mandatory -->
+            </div>
           </div>
           <div class="radio__box">
             <div class="radio">
@@ -95,9 +99,7 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="./script.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr">
-      flatpickr(".flatpickr", {wrap: true});
-    </script> -->
   </body>
 </html>

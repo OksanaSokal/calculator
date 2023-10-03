@@ -1,3 +1,7 @@
+// import flatpickr from 'flatpickr';
+// const flatpickr = requires('flatpickr');
+// flatpickr('.flatpickr', { wrap: true });
+
 const datePayment = document.querySelector('input[type="date"]'),
   button = document.querySelector('.button'),
   cashBtn = document.querySelector('.cash'),
@@ -21,6 +25,10 @@ finalDate.setMonth(today.getMonth() + 3);
 money.addEventListener('input', () => {
   const getMoney = new Intl.NumberFormat().format(money.value);
   outputSum.textContent = `£${getMoney}.00`;
+
+  let value = money.value;
+  value = (value * 100) / 20000;
+  money.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${value}%,#f0f0f0 ${value}%, #f0f0f0 100%)`;
 });
 
 period.addEventListener('input', () => {
@@ -29,6 +37,10 @@ period.addEventListener('input', () => {
   } else {
     outputYears.textContent = `${period.value} years`;
   }
+
+  let value = period.value;
+  value = (value * 100) / 15;
+  period.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${value}%,#f0f0f0 ${value}%, #f0f0f0 100%)`;
 });
 
 calendar.addEventListener('input', () => {

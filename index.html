@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <title>Calculator</title>
   </head>
   <body>
@@ -39,15 +43,35 @@
             <div class="calendar">
               <input type="date" class="date" />
             </div>
+            <!-- <div class="flatpickr">
+              <input type="text" placeholder="Select Date.." data-input />
+
+              <a class="input-button" title="toggle" data-toggle> иконка </a>
+            </div> -->
           </div>
-          <input
-            type="radio"
-            name="how-pay"
-            value="transfer"
-            checked
-            class="transfer"
-          />deposit Bank transfer
-          <input type="radio" name="how-pay" value="cash" class="cash" />Cash
+          <div class="radio__box">
+            <div class="radio">
+              <input
+                type="radio"
+                name="how-pay"
+                value="transfer"
+                checked
+                class="transfer radio"
+                id="transfer"
+              />deposit Bank transfer
+              <label class="radio__label" for="transfer"></label>
+            </div>
+            <div class="radio">
+              <input
+                type="radio"
+                name="how-pay"
+                value="cash"
+                class="cash radio"
+                id="cash"
+              />Cash
+              <label class="radio__label" for="cash"></label>
+            </div>
+          </div>
         </div>
 
         <div class="main__response">
@@ -55,11 +79,11 @@
           <div class="monthly_payment">0</div>
           <p>fees include</p>
           <div class="response__box">
-            <div class="response__item">
+            <div class="response__item grey">
               <p>borrowing</p>
               <div class="response__output title">£2,000.00</div>
             </div>
-            <div class="response__item">
+            <div class="response__item green">
               <p>to repay</p>
               <div class="response__repay title">£3,500.00</div>
             </div>
@@ -71,6 +95,9 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr">
+      flatpickr(".flatpickr", {wrap: true});
+    </script> -->
   </body>
 </html>

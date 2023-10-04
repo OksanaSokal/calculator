@@ -25,12 +25,19 @@ const finalDate = new Date(today);
 finalDate.setMonth(today.getMonth() + 3);
 
 money.addEventListener('input', () => {
-  const getMoney = new Intl.NumberFormat().format(money.value);
-  outputSum.textContent = `£${getMoney}.00`;
+  const getMoney = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'GBP',
+  }).format(money.value);
+  outputSum.textContent = getMoney;
+
+  responseOutput.textContent = getMoney;
 
   let value = money.value;
   value = (value * 100) / 20000;
   money.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${value}%,#f0f0f0 ${value}%, #f0f0f0 100%)`;
+
+  showMonthPayment();
 });
 
 period.addEventListener('input', () => {
@@ -43,12 +50,16 @@ period.addEventListener('input', () => {
   let value = period.value;
   value = (value * 100) / 15;
   period.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${value}%,#f0f0f0 ${value}%, #f0f0f0 100%)`;
+
+  showMonthPayment();
 });
 
 calendar.addEventListener('input', () => {
   countPercent();
 
   percentOutput.textContent = `${percent}%`;
+
+  showMonthPayment();
 });
 
 cashBtn.addEventListener('input', () => {
@@ -56,6 +67,8 @@ cashBtn.addEventListener('input', () => {
   if (cashBtn.checked) {
     percentOutput.textContent = `${percent}%`;
   }
+
+  showMonthPayment();
 });
 
 transferBtn.addEventListener('input', () => {
@@ -63,6 +76,8 @@ transferBtn.addEventListener('input', () => {
     countPercent();
     percentOutput.textContent = `${percent}%`;
   }
+
+  showMonthPayment();
 });
 
 function countMonthlyPayment() {
@@ -97,18 +112,38 @@ function countPercent() {
   }
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
+function showMonthPayment() {
   countPercent();
 
   countMonthlyPayment();
 
-  monthPayment.textContent = countMonthlyPayment();
+  monthPayment.textContent = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'GBP',
+  }).format(countMonthlyPayment());
 
-  responseOutput.textContent = countMonthlyPayment();
+  //   responseOutput.textContent = countMonthlyPayment();
 
-  let allSum = countMonthlyPayment() * (+period.value * 12);
+  let allSum = (countMonthlyPayment() * (+period.value * 12)).toFixed(2);
 
-  responseRepay.textContent = allSum.toFixed(2);
+  responseRepay.textContent = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'GBP',
+  }).format(allSum);
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  //   countPercent();
+
+  //   countMonthlyPayment();
+
+  //   monthPayment.textContent = countMonthlyPayment();
+
+  //   responseOutput.textContent = countMonthlyPayment();
+
+  //   let allSum = countMonthlyPayment() * (+period.value * 12);
+
+  //   responseRepay.textContent = allSum.toFixed(2);
 });

@@ -62,7 +62,7 @@ h1 span {
 
 .main__box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .subtitle {
@@ -92,18 +92,20 @@ h1 span {
   text-align: center;
   font-size: 43px;
   font-weight: 700;
-  margin-bottom: 87px;
+  margin-bottom: 95px;
 }
 
 .calendar__box {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 78px;
+  margin-bottom: 70px;
 }
 
 .percent__output {
   text-align: right;
   font-size: 29px;
+  margin-top: 15px;
+  margin-left: 30px;
 }
 
 .deposit__title {
@@ -111,9 +113,11 @@ h1 span {
   color: #54d4a0;
   font-size: 17px;
   font-weight: 600;
-  padding: 5px;
+  padding: 10px 0px 10px 0px;
   border-bottom: 1px solid #000;
-  margin-bottom: 20px;
+  padding-right: 45px;
+  margin-left: 10px;
+  margin-bottom: 25px;
 }
 
 .title {
@@ -144,8 +148,18 @@ h2 {
 .response__box {
   display: flex;
   justify-content: space-between;
-  gap: 140px;
+  /* gap: 140px; */
   margin-bottom: 67px;
+  text-align: left;
+}
+
+.grey {
+  border-radius: 4px;
+  background: #f6f6f6;
+}
+.green {
+  border-radius: 4px;
+  background: #e9fff6;
 }
 
 .response__item + p {
@@ -154,12 +168,22 @@ h2 {
   text-transform: uppercase;
 }
 
+.response__item {
+  padding: 25px 43px 11px;
+}
+
 .response__output,
 .response__repay {
   font-family: Open Sans;
   font-size: 43px;
   font-weight: 800;
 }
+
+/* .response__output,
+.response__output {
+  width: 230px;
+  text-align: left;
+} */
 
 form {
   max-width: 630px;
@@ -280,23 +304,34 @@ form {
   outline: 0;
 }
 
+.response__box {
+  gap: 55px;
+}
+
 @media (max-width: 1240px) {
   .money,
   .period {
     width: 100%;
   }
   .response__box {
-    gap: 60px;
+    flex-direction: column;
+    gap: 23px;
+    text-align: center;
+  }
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .calendar__box {
+    gap: 20px;
+  }
+  .main__box {
+    justify-content: space-around;
   }
 }
 @media (max-width: 900px) {
   .main__box {
     gap: 15px;
-  }
-  .response__box {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
   }
   .title {
     font-size: 35px;
@@ -339,7 +374,7 @@ form {
     margin-bottom: 80px;
   }
   .response__box {
-    gap: 0;
+    gap: 23px;
     justify-content: space-between;
   }
 }
@@ -365,13 +400,5 @@ form {
   .response__item {
     padding: 25px 43px 11px;
     margin-bottom: 23px;
-  }
-  .grey {
-    border-radius: 4px;
-    background: #f6f6f6;
-  }
-  .green {
-    border-radius: 4px;
-    background: #e9fff6;
   }
 }

@@ -24,7 +24,7 @@ const today = new Date();
 const finalDate = new Date(today);
 finalDate.setMonth(today.getMonth() + 3);
 
-money.addEventListener('input', () => {
+function showBorrowSum() {
   const getMoney = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'GBP',
@@ -32,10 +32,16 @@ money.addEventListener('input', () => {
   outputSum.textContent = getMoney;
 
   responseOutput.textContent = getMoney;
+}
+
+money.addEventListener('input', () => {
+  showBorrowSum();
 
   let value = money.value;
   value = (value * 100) / 20000;
-  money.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${value}%,#f0f0f0 ${value}%, #f0f0f0 100%)`;
+  money.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${
+    value - 2
+  }%,#f0f0f0 ${value - 2}%, #f0f0f0 100%)`;
 
   showMonthPayment();
 });
@@ -49,7 +55,9 @@ period.addEventListener('input', () => {
 
   let value = period.value;
   value = (value * 100) / 15;
-  period.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${value}%,#f0f0f0 ${value}%, #f0f0f0 100%)`;
+  period.style.background = `-webkit-linear-gradient(left, #54d4a0 0%, #54d4a0 ${
+    value - 3
+  }%,#f0f0f0 ${value - 3}%, #f0f0f0 100%)`;
 
   showMonthPayment();
 });
@@ -87,19 +95,13 @@ function countMonthlyPayment() {
 
   const result = s * ((r * (1 + r) ** n) / ((1 + r) ** n - 1));
 
-  console.log(result.toFixed(2));
-  console.log(+money.value);
-  console.log(+percent / 12);
-  console.log(+period.value * 12);
-
   return result.toFixed(2);
 }
 
 function countPercent() {
   let newCalendarValue = calendar.value.split('/').reverse().join(',');
-  console.log(newCalendarValue);
+
   let inputDapositeDate = new Date(newCalendarValue);
-  console.log(inputDapositeDate);
 
   if (inputDapositeDate > finalDate) {
     percent = 6.8;
@@ -122,8 +124,6 @@ function showMonthPayment() {
     currency: 'GBP',
   }).format(countMonthlyPayment());
 
-  //   responseOutput.textContent = countMonthlyPayment();
-
   let allSum = (countMonthlyPayment() * (+period.value * 12)).toFixed(2);
 
   responseRepay.textContent = new Intl.NumberFormat('en-US', {
@@ -132,18 +132,4 @@ function showMonthPayment() {
   }).format(allSum);
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  //   countPercent();
-
-  //   countMonthlyPayment();
-
-  //   monthPayment.textContent = countMonthlyPayment();
-
-  //   responseOutput.textContent = countMonthlyPayment();
-
-  //   let allSum = countMonthlyPayment() * (+period.value * 12);
-
-  //   responseRepay.textContent = allSum.toFixed(2);
-});
+showMonthPayment();
